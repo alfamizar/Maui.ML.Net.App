@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:MauiAppML.Presentation.ViewModels"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             x:Class="MauiAppML.Presentation.UI.Pages.MainPage">
+
+    <ContentPage.BindingContext>
+        <vm:PredictViewModel />
+    </ContentPage.BindingContext>
+
+    <Grid>
+        <ScrollView>
+            <VerticalStackLayout Spacing="25"
+                                 Padding="30">
+
+                <Label Text="Hello, World!"
+                       SemanticProperties.HeadingLevel="Level1"
+                       FontSize="32"
+                       HorizontalOptions="Center" />
+
+                <Label Text="Welcome to .NET Multi-platform App UI"
+                       SemanticProperties.HeadingLevel="Level1"
+                       SemanticProperties.Description="Welcome to dot net Multi platform App U I"
+                       FontSize="18"
+                       HorizontalOptions="Center" />
+
+                <Editor x:Name="editor"
+                        Placeholder="Enter your feedback here"
+                        Text="{Binding FeedBackText}"
+                        AutoSize="TextChanges">
+                    <Editor.Behaviors>
+                        <toolkit:UserStoppedTypingBehavior Command="{Binding Commands[Predict]}"
+                                                           StoppedTypingTimeThreshold="1000"
+                                                           MinimumLengthThreshold="5"
+                                                           ShouldDismissKeyboardAutomatically="True" />
+                        <toolkit:EventToCommandBehavior EventName="TextChanged"
+                                                        Command="{Binding Commands[ResetResult]}" />
+                    </Editor.Behaviors>
+                </Editor>
+
+                <Label Text="{Binding PredictionResult, StringFormat='Prediction result: {0}'}"
+                       FontSize="18"
+                       FontAttributes="Bold"
+                       x:Name="CounterLabel"
+                       HorizontalOptions="Center" />
+
+                <Image Source="dotnet_bot.png"
+                       SemanticProperties.Description="Cute dot net bot waving hi to you!"
+                       WidthRequest="250"
+                       HeightRequest="310"
+                       HorizontalOptions="Center" />
+
+            </VerticalStackLayout>
+
+        </ScrollView>
+
+        <ActivityIndicator IsRunning="{Binding IsBusy}"
+                           IsVisible="{Binding IsBusy}"
+                           HeightRequest="40"
+                           VerticalOptions="CenterAndExpand"
+                           HorizontalOptions="CenterAndExpand" />
+    </Grid>
+
+</ContentPage>
