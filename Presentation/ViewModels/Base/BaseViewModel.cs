@@ -32,6 +32,36 @@ namespace MauiAppML.Presentation.ViewModels.Base
             Commands = new Dictionary<string, ICommand>();
         }
 
+        public virtual void OnPageAppearing()
+        {
+
+        }
+
+        public virtual void OnPageDisappearing()
+        {
+
+        }
+
+        public virtual void OnBackButtonPressed()
+        {
+
+        }
+
+        public virtual void OnNavigatedFrom()
+        {
+
+        }
+
+        public virtual void OnNavigatingFrom()
+        {
+
+        }
+
+        public virtual void OnNavigatedTo()
+        {
+
+        }
+
         protected bool SetProperty<T>(ref T backingStore, T value,
             [CallerMemberName] string propertyName = "",
             Action onChanged = null)
