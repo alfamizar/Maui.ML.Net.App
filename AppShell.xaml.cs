@@ -10,15 +10,33 @@ public partial class AppShell : Shell
         InitializeComponent();
     }
 
-     public void OnShellAppearing()
+    public void OnAppWindowCreated()
     {
         //(CurrentPage.BindingContext as BaseViewModel).OnPageAppearing();
-        (CurrentPage as BasePage).OnPageAppearing();
+        (CurrentPage as BasePage).OnAppWindowCreated();
     }
 
-     public void OnShellDisappearing()
+    public void OnAppWindowActivated()
+    {
+        //(CurrentPage.BindingContext as BaseViewModel).OnPageAppearing();
+        (CurrentPage as BasePage).OnAppWindowResumed();
+    }
+
+    public void OnAppWindowResumed()
+    {
+        //(CurrentPage.BindingContext as BaseViewModel).OnPageAppearing();
+        (CurrentPage as BasePage).OnAppWindowActivated();
+    }
+
+    public void OnAppWindowBackgrounding()
+    {
+        //(CurrentPage.BindingContext as BaseViewModel).OnPageAppearing();
+        (CurrentPage as BasePage).OnAppWindowBackgrounding();
+    }
+
+    public void OnAppWindowStopped()
     {
         //(CurrentPage.BindingContext as BaseViewModel).OnPageDisappearing();
-        (CurrentPage as BasePage).OnPageDisappearing();
+        (CurrentPage as BasePage).OnAppWindowStopped();
     }
 }

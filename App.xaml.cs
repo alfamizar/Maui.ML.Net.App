@@ -20,19 +20,33 @@ public partial class App : Application
         window.Created += (s, e) =>
         {
             // Custom logic
+            ((AppShell)window.Page).OnAppWindowStopped();
         };
 
-        window.Stopped += (s, e) =>
+        window.Activated += (s, e) =>
         {
-            ((AppShell)window.Page).OnShellDisappearing();
+            // Custom logic
+            ((AppShell)window.Page).OnAppWindowStopped();
         };
 
         window.Resumed += (s, e) =>
         {
-            ((AppShell)window.Page).OnShellAppearing();
+            // Custom logic
+            ((AppShell)window.Page).OnAppWindowStopped();
+        };
+
+        window.Backgrounding += (s, e) =>
+        {
+            // Custom logic
+            ((AppShell)window.Page).OnAppWindowStopped();
+        };
+
+        window.Stopped += (s, e) =>
+        {
+            // Custom logic
+            ((AppShell)window.Page).OnAppWindowStopped();
         };
 
         return window;
     }
-
 }

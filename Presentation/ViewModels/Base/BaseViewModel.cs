@@ -34,32 +34,57 @@ namespace MauiAppML.Presentation.ViewModels.Base
 
         public virtual void OnPageAppearing()
         {
-
+            // Custom logic
         }
 
         public virtual void OnPageDisappearing()
         {
-
+            // Custom logic
         }
 
         public virtual void OnBackButtonPressed()
         {
-
+            // Custom logic
         }
 
         public virtual void OnNavigatedFrom()
         {
-
+            // Custom logic
         }
 
         public virtual void OnNavigatingFrom()
         {
-
+            // Custom logic
         }
 
         public virtual void OnNavigatedTo()
         {
+            // Custom logic
+        }
 
+        public virtual void OnAppWindowCreated()
+        {
+            // Custom logic
+        }
+
+        public virtual void OnAppWindowActivated()
+        {
+            // Custom logic
+        }
+
+        public virtual void OnAppWindowResumed()
+        {
+            // Custom logic
+        }
+
+        public virtual void OnAppWindowBackgrounding()
+        {
+            // Custom logic
+        }
+
+        public virtual void OnAppWindowStopped()
+        {
+            // Custom logic
         }
 
         protected bool SetProperty<T>(ref T backingStore, T value,

@@ -11,13 +11,15 @@ namespace MauiAppML.Presentation.UI.Pages.Base
     {
         public BaseViewModel ViewModel => BindingContext as BaseViewModel;
 
-        public virtual void OnPageAppearing()
+        protected override void OnAppearing()
         {
+            base.OnAppearing();
             ViewModel.OnPageAppearing();
         }
 
-        public virtual void OnPageDisappearing()
+        protected override void OnDisappearing()
         {
+            base.OnDisappearing();
             ViewModel.OnPageDisappearing();
         }
 
@@ -43,6 +45,36 @@ namespace MauiAppML.Presentation.UI.Pages.Base
         {
             base.OnNavigatingFrom(args);
             ViewModel.OnNavigatingFrom();
+        }
+
+        public virtual void OnAppWindowCreated()
+        {
+            // Custom logic
+            ViewModel.OnAppWindowActivated();
+        }
+
+        public virtual void OnAppWindowActivated()
+        {
+            // Custom logic
+            ViewModel.OnAppWindowActivated();
+        }
+
+        public virtual void OnAppWindowResumed()
+        {
+            // Custom logic
+            ViewModel.OnAppWindowResumed();
+        }
+
+        public virtual void OnAppWindowBackgrounding()
+        {
+            // Custom logic
+            ViewModel.OnAppWindowBackgrounding();
+        }
+
+        public virtual void OnAppWindowStopped()
+        {
+            // Custom logic
+            ViewModel.OnAppWindowStopped();
         }
     }
 }
