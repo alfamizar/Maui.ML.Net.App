@@ -20,25 +20,25 @@ public partial class App : Application
         window.Created += (s, e) =>
         {
             // Custom logic
-            ((AppShell)window.Page).OnAppWindowStopped();
+            ((AppShell)window.Page).OnAppWindowCreated();
         };
 
         window.Activated += (s, e) =>
         {
             // Custom logic
-            ((AppShell)window.Page).OnAppWindowStopped();
+            ((AppShell)window.Page).OnAppWindowActivated();
         };
 
         window.Resumed += (s, e) =>
         {
             // Custom logic
-            ((AppShell)window.Page).OnAppWindowStopped();
+            ((AppShell)window.Page).OnAppWindowResumed();
         };
 
         window.Backgrounding += (s, e) =>
         {
             // Custom logic
-            ((AppShell)window.Page).OnAppWindowStopped();
+            ((AppShell)window.Page).OnAppWindowBackgrounding();
         };
 
         window.Stopped += (s, e) =>

@@ -19,13 +19,13 @@ public partial class AppShell : Shell
     public void OnAppWindowActivated()
     {
         //(CurrentPage.BindingContext as BaseViewModel).OnPageAppearing();
-        (CurrentPage as BasePage).OnAppWindowResumed();
+        (CurrentPage as BasePage).OnAppWindowActivated();
     }
 
     public void OnAppWindowResumed()
     {
         //(CurrentPage.BindingContext as BaseViewModel).OnPageAppearing();
-        (CurrentPage as BasePage).OnAppWindowActivated();
+        (CurrentPage as BasePage).OnAppWindowResumed();
     }
 
     public void OnAppWindowBackgrounding()

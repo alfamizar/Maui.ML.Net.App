@@ -50,7 +50,7 @@ namespace MauiAppML.Presentation.UI.Pages.Base
         public virtual void OnAppWindowCreated()
         {
             // Custom logic
-            ViewModel.OnAppWindowActivated();
+            ViewModel.OnAppWindowCreated();
         }
 
         public virtual void OnAppWindowActivated()
