@@ -92,7 +92,9 @@ namespace MauiAppML.Presentation.ViewModels.Base
             Action onChanged = null)
         {
             if (EqualityComparer<T>.Default.Equals(backingStore, value))
+            {
                 return false;
+            }
 
             backingStore = value;
 
@@ -107,8 +109,7 @@ namespace MauiAppML.Presentation.ViewModels.Base
         protected void OnPropertyChanged([CallerMemberName] string propertyName = "")
         {
             var changed = PropertyChanged;
-            if (changed == null)
-                return;
+            if (changed == null) return;
 
             changed.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }

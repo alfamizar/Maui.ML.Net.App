@@ -40,7 +40,7 @@ namespace MauiAppML.Presentation.ViewModels
                     Col0 = FeedBackText
                 };
 
-                return SentimentModel.Predict(sampleData).Prediction == 1 ? "Positive" : "Negative"; ;
+                return SentimentModel.Predict(sampleData).Prediction == 1 ? "Positive" : "Negative";
             });
 
             IsBusy = false;

@@ -43,7 +43,6 @@
                 <Label Text="{Binding PredictionResult, StringFormat='Prediction result: {0}'}"
                        FontSize="18"
                        FontAttributes="Bold"
-                       x:Name="CounterLabel"
                        HorizontalOptions="Center" />
 
                 <Image Source="dotnet_bot.png"
