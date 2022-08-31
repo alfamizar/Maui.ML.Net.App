@@ -1,8 +1,4 @@
-﻿using MauiAppML.Presentation.UI.Pages.Base;
-using MauiAppML.Presentation.ViewModels.Base;
-using System.Diagnostics;
-
-namespace MauiAppML;
+﻿namespace MauiAppML;
 
 public partial class App : Application
 {
@@ -45,6 +41,12 @@ public partial class App : Application
         {
             // Custom logic
             ((AppShell)window.Page).OnAppWindowStopped();
+        };
+
+        window.Destroying += (s, e) =>
+        {
+            // Custom logic
+            ((AppShell)window.Page).OnAppWindowDestroying();
         };
 
         return window;

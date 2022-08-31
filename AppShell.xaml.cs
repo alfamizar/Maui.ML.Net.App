@@ -1,5 +1,4 @@
 ﻿using MauiAppML.Presentation.UI.Pages.Base;
-using MauiAppML.Presentation.ViewModels.Base;
 
 namespace MauiAppML;
 
@@ -38,5 +37,11 @@ public partial class AppShell : Shell
     {
         //(CurrentPage.BindingContext as BaseViewModel).OnPageDisappearing();
         (CurrentPage as BasePage).OnAppWindowStopped();
+    }
+
+    public void OnAppWindowDestroying()
+    {
+        //(CurrentPage.BindingContext as BaseViewModel).OnPageDisappearing();
+        (CurrentPage as BasePage).OnAppWindowDestroying();
     }
 }
