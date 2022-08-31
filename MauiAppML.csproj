@@ -62,7 +62,6 @@
 
 	<ItemGroup>
 	  <PackageReference Include="CommunityToolkit.Maui" Version="1.2.0" />
-	  <PackageReference Include="CommunityToolkit.Maui.Core" Version="1.2.0" />
 	  <PackageReference Include="Microsoft.ML" Version="1.7.1" />
 	</ItemGroup>
 
